@@ -1,0 +1,122 @@
+:root {
+  /* CSS HEX */
+  --antiflash-white: #f1f6f9ff;
+  --vista-blue: #8691c8ff;
+  --violet-blue: #5157a6ff;
+  --oxford-blue: #202a3eff;
+  --yinmn-blue: #394967ff;
+  --paynes-gray: #536e82ff;
+  --cadet-gray: #9ba3b4ff;
+  --alice-blue: #dde6edff;
+  /* size */
+  --ukuran-font: 5vw;
+  /* margin */
+  --custom-margin-0: 0;
+}
+
+@font-face {
+  font-family: "SpaceHorizon";
+  src: url("fonts/SpaceHorizon-Regular.ttf") format("woff2"), url("fonts/SpaceHorizon-Regular.ttf") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@media (max-width: 767px) {
+  .center-text {
+    text-align: center;
+  }
+  /* Memperbesar teks pada h1 pada perangkat seluler */
+  .center-text h1 {
+    font-size: 3em; /* Sesuaikan ukuran yang diinginkan */
+  }
+}
+
+@media (max-width: 567px) {
+  .ls-567 {
+    letter-spacing: 1px;
+  }
+}
+@media (max-width: 992px) {
+  .ls-992 {
+    letter-spacing: 2px;
+  }
+}
+
+@media (min-width: 992px) {
+  .ls-10n4 {
+    letter-spacing: 10.4px;
+  }
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&family=Ubuntu:wght@300&display=swap");
+
+body {
+  min-height: 4000px;
+  background-color: var(--alice-blue);
+}
+
+.navbar-nav .nav-link {
+  color: var(--oxford-blue);
+}
+.navbar-nav .nav-link.disabled {
+  color: var(--alice-blue);
+}
+
+#home {
+  padding: 10rem 0;
+}
+
+.font-10vw {
+  font-size: var(--ukuran-font);
+}
+
+.margin-0 {
+  margin: var(--custom-margin-0);
+}
+
+#about {
+  padding: 10rem 0;
+  background-color: var(--cadet-gray);
+}
+
+#memori {
+  padding: 4rem 0;
+}
+
+.teks-putih {
+  color: var(--antiflash-white);
+}
+
+.warna-gelap {
+  color: var(--oxford-blue);
+}
+
+.teks-ungu {
+  color: var(--cadet-gray);
+}
+
+.ls-p {
+  letter-spacing: 1px;
+}
+
+.cs {
+  min-width: 100%;
+  min-height: 800px;
+}
+
+/* Style untuk tombol "to the top" */
+#toTopBtn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: none;
+  background-color: var(--paynes-gray);
+  border: none;
+}
+
+#toTopBtn:hover,
+#toTopBtn:active,
+#toTopBtn:focus {
+  outline: none; /* Remove focus border */
+  box-shadow: none; /* Remove focus box shadow */
+}
