@@ -117,6 +117,9 @@ body {
 #toTopBtn:hover,
 #toTopBtn:active,
 #toTopBtn:focus {
+  font-weight: bold;
   outline: none; /* Remove focus border */
   box-shadow: none; /* Remove focus box shadow */
-}
+  background-color: var(--alice-blue);
+  color: var(--violet-blue);
+  box-shadow: 2px 2px;
