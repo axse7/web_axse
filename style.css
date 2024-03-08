@@ -35,6 +35,10 @@
   .ls-567 {
     letter-spacing: 1px;
   }
+  #home {
+    background-position: center;
+    background-size: auto%;
+  }
 }
 @media (max-width: 992px) {
   .ls-992 {
@@ -51,8 +55,17 @@
 @import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&family=Ubuntu:wght@300&display=swap");
 
 body {
-  min-height: 4000px;
+  /* min-height: 4000px; */
   background-color: var(--alice-blue);
+}
+
+a {
+  color: var(--antiflash-white);
+  text-decoration: none;
+}
+
+.a-footer:hover {
+  color: var(--oxford-blue);
 }
 
 .navbar-nav .nav-link {
@@ -64,6 +77,10 @@ body {
 
 #home {
   padding: 10rem 0;
+  background-image: url(./img/foto/jakarta.jpg);
+  background-size: cover;
+  background-position: center;
+  height: 1000px;
 }
 
 .font-10vw {
@@ -96,7 +113,7 @@ body {
 }
 
 .ls-p {
-  letter-spacing: 1px;
+  letter-spacing: 3px;
 }
 
 .cs {
