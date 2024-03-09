@@ -37,7 +37,7 @@
   }
   #home {
     background-position: center;
-    background-size: auto%;
+    background-size: auto;
   }
 }
 @media (max-width: 992px) {
@@ -73,6 +73,17 @@ a {
 }
 .navbar-nav .nav-link.disabled {
   color: var(--alice-blue);
+}
+
+#backButton {
+  cursor: pointer;
+  flex-wrap: nowrap;
+}
+
+.crop-img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
 }
 
 #home {
@@ -121,6 +132,10 @@ a {
   min-height: 800px;
 }
 
+.card {
+  min-height: 200px;
+}
+
 /* Style untuk tombol "to the top" */
 #toTopBtn {
   position: fixed;
@@ -140,4 +155,8 @@ a {
   background-color: var(--alice-blue);
   color: var(--violet-blue);
   box-shadow: 2px 2px;
+}
+
+.additional-info {
+  display: none;
 }
