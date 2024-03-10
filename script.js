@@ -16,7 +16,7 @@ fetch("json/members.json")
 // Fungsi untuk membuat card
 function createMemberCard(member) {
   return `
-    <div class="card mb-3 mt-4 shadow" style="max-width: auto; background-color: var(--antiflash-white)">
+    <div class="mb-3 mt-4 shadow rounded-4" style="max-width: auto; background-color: var(--antiflash-white)">
       <div class="row g-0">
         <div class="col-md-2 card-profile">
           <img src="${member.image}" class="img-fluid rounded-circle crop-img p-3" alt="${member.name}"/>
