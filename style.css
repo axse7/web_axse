@@ -21,13 +21,17 @@
   font-style: normal;
 }
 
-@media (max-width: 767px) {
+@media (max-width: 768px) {
   .center-text {
     text-align: center;
   }
   /* Memperbesar teks pada h1 pada perangkat seluler */
   .center-text h1 {
     font-size: 3em; /* Sesuaikan ukuran yang diinginkan */
+  }
+  .card-profile {
+    display: flex;
+    justify-content: center;
   }
 }
 
@@ -37,12 +41,16 @@
   }
   #home {
     background-position: center;
-    background-size: auto%;
+    background-size: auto;
   }
 }
 @media (max-width: 992px) {
   .ls-992 {
     letter-spacing: 2px;
+  }
+  .card-profile {
+    display: flex;
+    align-items: center;
   }
 }
 
@@ -53,6 +61,21 @@
 }
 
 @import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&family=Ubuntu:wght@300&display=swap");
+
+.comfortaa {
+  font-family: "Comfortaa", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+.poppins-regular {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
 
 body {
   /* min-height: 4000px; */
@@ -73,6 +96,21 @@ a {
 }
 .navbar-nav .nav-link.disabled {
   color: var(--alice-blue);
+}
+
+#backButton {
+  cursor: pointer;
+  flex-wrap: nowrap;
+}
+
+.card-profile {
+  display: flex;
+  justify-content: center;
+}
+.crop-img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
 }
 
 #home {
@@ -121,14 +159,26 @@ a {
   min-height: 800px;
 }
 
+.card {
+  min-height: auto;
+}
+.card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+}
+
 /* Style untuk tombol "to the top" */
 #toTopBtn {
   position: fixed;
-  bottom: 20px;
-  right: 20px;
+  bottom: 1rem;
+  right: 1rem;
   display: none;
-  background-color: var(--paynes-gray);
-  border: none;
+  color: var(--violet-blue);
+  background-color: transparent;
+  border: 1px solid var(--violet-blue);
+  border-radius: 50%;
 }
 
 #toTopBtn:hover,
@@ -137,7 +187,10 @@ a {
   font-weight: bold;
   outline: none; /* Remove focus border */
   box-shadow: none; /* Remove focus box shadow */
-  background-color: var(--alice-blue);
-  color: var(--violet-blue);
-  box-shadow: 2px 2px;
+  background-color: var(--violet-blue);
+  color: var(--antiflash-white);
+}
+
+.additional-info {
+  display: none;
 }
