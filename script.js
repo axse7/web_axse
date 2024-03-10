@@ -25,7 +25,7 @@ function createMemberCard(member) {
           <div class="card-body warna-gelap">
             <h5 class="card-title fw-bold ">${member.name}</h5>
             <p class="card-text poppins-reguler pt-1">${member.description}</p>
-            <a href="#" class="text-primary see-more">See More</a>
+            <a href="#" class="text-primary see-more">More Info</a>
             <div class="additional-info" style="display: none;">
               <!-- Informasi tambahan -->
               <p>${member.additionalInfo}</p>
@@ -54,10 +54,10 @@ function displayMembers(members) {
       // Toggling the display of additional info
       if (additionalInfo.style.display === "none") {
         additionalInfo.style.display = "block"; // Munculkan informasi tambahan
-        this.textContent = "See Less"; // Ubah teks tombol menjadi "See Less"
+        this.textContent = "Less Info"; // Ubah teks tombol menjadi "See Less"
       } else {
         additionalInfo.style.display = "none"; // Sembunyikan informasi tambahan
-        this.textContent = "See More"; // Ubah teks tombol menjadi "See More"
+        this.textContent = "More Info"; // Ubah teks tombol menjadi "See More"
       }
     });
   });
