@@ -172,11 +172,13 @@ a {
 /* Style untuk tombol "to the top" */
 #toTopBtn {
   position: fixed;
-  bottom: 20px;
-  right: 20px;
+  bottom: 1rem;
+  right: 1rem;
   display: none;
-  background-color: var(--paynes-gray);
-  border: none;
+  color: var(--violet-blue);
+  background-color: transparent;
+  border: 1px solid var(--violet-blue);
+  border-radius: 50%;
 }
 
 #toTopBtn:hover,
@@ -185,9 +187,8 @@ a {
   font-weight: bold;
   outline: none; /* Remove focus border */
   box-shadow: none; /* Remove focus box shadow */
-  background-color: var(--alice-blue);
-  color: var(--violet-blue);
-  box-shadow: 2px 2px;
+  background-color: var(--violet-blue);
+  color: var(--antiflash-white);
 }
 
 .additional-info {
