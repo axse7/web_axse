@@ -103,6 +103,10 @@ a {
   flex-wrap: nowrap;
 }
 
+.card-profile {
+  display: flex;
+  justify-content: center;
+}
 .crop-img {
   width: 200px;
   height: 200px;

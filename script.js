@@ -19,7 +19,7 @@ function createMemberCard(member) {
     <div class="card mb-3 mt-4 shadow" style="max-width: auto; background-color: var(--antiflash-white)">
       <div class="row g-0">
         <div class="col-md-2 card-profile">
-          <img src="${member.image}" class="img-fluid rounded-2" alt="${member.name}"/>
+          <img src="${member.image}" class="img-fluid rounded-circle crop-img p-3" alt="${member.name}"/>
         </div>
         <div class="col-md-8">
           <div class="card-body warna-gelap">
