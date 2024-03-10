@@ -24,7 +24,7 @@ function createMemberCard(member) {
         <div class="col-md-8">
           <div class="card-body warna-gelap">
             <h5 class="card-title">${member.name}</h5>
-            <p class="card-text">${member.description}</p>
+            <p class="card-text poppins-reguler">${member.description}</p>
             <a href="#" class="text-primary see-more">See More</a>
             <div class="additional-info" style="display: none;">
               <!-- Informasi tambahan -->
