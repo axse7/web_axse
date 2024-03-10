@@ -17,8 +17,8 @@ fetch("json/members.json")
 function createMemberCard(member) {
   return `
     <div class="card mb-3 mt-4 shadow" style="max-width: auto; background-color: var(--antiflash-white)">
-      <div class="row g-0 ps-3">
-        <div class="col-md-2">
+      <div class="row g-0">
+        <div class="col-md-2 center">
           <img src="${member.image}" class="img-fluid rounded-2" alt="${member.name}"/>
         </div>
         <div class="col-md-8">

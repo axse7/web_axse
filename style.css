@@ -21,13 +21,17 @@
   font-style: normal;
 }
 
-@media (max-width: 767px) {
+@media (max-width: 768px) {
   .center-text {
     text-align: center;
   }
   /* Memperbesar teks pada h1 pada perangkat seluler */
   .center-text h1 {
     font-size: 3em; /* Sesuaikan ukuran yang diinginkan */
+  }
+  .center {
+    display: flex;
+    justify-content: center;
   }
 }
 
