@@ -18,7 +18,7 @@ function createMemberCard(member) {
   return `
     <div class="card mb-3 mt-4 shadow" style="max-width: auto; background-color: var(--antiflash-white)">
       <div class="row g-0">
-        <div class="col-md-2 center">
+        <div class="col-md-2 card-profile">
           <img src="${member.image}" class="img-fluid rounded-2" alt="${member.name}"/>
         </div>
         <div class="col-md-8">
@@ -26,7 +26,7 @@ function createMemberCard(member) {
             <h5 class="card-title">${member.name}</h5>
             <p class="card-text">${member.description}</p>
             <a href="#" class="text-primary see-more">See More</a>
-            <div class="additional-info pt-2" style="display: none;">
+            <div class="additional-info" style="display: none;">
               <!-- Informasi tambahan -->
               <p>${member.additionalInfo}</p>
             </div>

@@ -29,7 +29,7 @@
   .center-text h1 {
     font-size: 3em; /* Sesuaikan ukuran yang diinginkan */
   }
-  .center {
+  .card-profile {
     display: flex;
     justify-content: center;
   }
@@ -47,6 +47,10 @@
 @media (max-width: 992px) {
   .ls-992 {
     letter-spacing: 2px;
+  }
+  .card-profile {
+    display: flex;
+    align-items: center;
   }
 }
 
@@ -137,7 +141,13 @@ a {
 }
 
 .card {
-  min-height: 200px;
+  min-height: auto;
+}
+.card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
 }
 
 /* Style untuk tombol "to the top" */
