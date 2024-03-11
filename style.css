@@ -129,6 +129,10 @@ a {
   min-height: 800px;
 }
 
+.table {
+  margin-bottom: 0;
+}
+
 /* Style untuk tombol "to the top" */
 #toTopBtn {
   position: fixed;
