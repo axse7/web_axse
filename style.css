@@ -21,45 +21,6 @@
   font-style: normal;
 }
 
-@media (max-width: 768px) {
-  .center-text {
-    text-align: center;
-  }
-  /* Memperbesar teks pada h1 pada perangkat seluler */
-  .center-text h1 {
-    font-size: 3em; /* Sesuaikan ukuran yang diinginkan */
-  }
-  .card-profile {
-    display: flex;
-    justify-content: center;
-  }
-}
-
-@media (max-width: 567px) {
-  .ls-567 {
-    letter-spacing: 1px;
-  }
-  #home {
-    background-position: center;
-    background-size: auto;
-  }
-}
-@media (max-width: 992px) {
-  .ls-992 {
-    letter-spacing: 2px;
-  }
-  .card-profile {
-    display: flex;
-    align-items: center;
-  }
-}
-
-@media (min-width: 992px) {
-  .ls-10n4 {
-    letter-spacing: 10.4px;
-  }
-}
-
 @import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&family=Ubuntu:wght@300&display=swap");
 
 .comfortaa {
@@ -103,6 +64,9 @@ a {
   flex-wrap: nowrap;
 }
 
+.card {
+  min-height: auto;
+}
 .card-profile {
   display: flex;
   justify-content: center;
@@ -112,6 +76,13 @@ a {
   height: 200px;
   object-fit: cover;
 }
+.card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+}
+
 
 #home {
   padding: 10rem 0;
@@ -159,16 +130,6 @@ a {
   min-height: 800px;
 }
 
-.card {
-  min-height: auto;
-}
-.card-body {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  height: 100%;
-}
-
 /* Style untuk tombol "to the top" */
 #toTopBtn {
   position: fixed;
@@ -193,4 +154,43 @@ a {
 
 .additional-info {
   display: none;
+}
+
+@media (max-width: 768px) {
+  .center-text {
+    text-align: center;
+  }
+  /* Memperbesar teks pada h1 pada perangkat seluler */
+  .center-text h1 {
+    font-size: 3em; /* Sesuaikan ukuran yang diinginkan */
+  }
+  .card-profile {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 567px) {
+  .ls-567 {
+    letter-spacing: 1px;
+  }
+  #home {
+    background-position: center;
+    background-size: auto;
+  }
+}
+@media (max-width: 992px) {
+  .ls-992 {
+    letter-spacing: 2px;
+  }
+  .card-profile {
+    display: flex;
+    align-items: center;
+  }
+}
+
+@media (min-width: 992px) {
+  .ls-10n4 {
+    letter-spacing: 10.4px;
+  }
 }

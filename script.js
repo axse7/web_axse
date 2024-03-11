@@ -18,11 +18,11 @@ function createMemberCard(member) {
   return `
     <div class="mb-3 mt-4 shadow rounded-4" style="max-width: auto; background-color: var(--antiflash-white)">
       <div class="row g-0">
-        <div class="col-md-2 card-profile">
+        <div class="col-lg-2 card-profile">
           <img src="${member.image}" class="img-fluid rounded-circle crop-img p-4" alt="${member.name}" title="${member.name}"/>
         </div>
-        <div class="col-md-8">
-          <div class="card-body warna-gelap">
+        <div class="col-lg-8">
+          <div class="card-body warna-gelap p-4">
             <h5 class="card-title fw-bold ">${member.name}</h5>
             <p class="card-text poppins-reguler pt-1">${member.description}</p>
             <a href="#" class="text-primary see-more">More Info</a>
