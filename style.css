@@ -83,7 +83,6 @@ a {
   height: 100%;
 }
 
-
 #home {
   padding: 10rem 0;
   background-image: url(./img/foto/jakarta.jpg);
@@ -136,9 +135,9 @@ a {
   bottom: 1rem;
   right: 1rem;
   display: none;
-  color: var(--violet-blue);
-  background-color: transparent;
-  border: 1px solid var(--violet-blue);
+  color: var(--antiflash-white);
+  background-color: var(--violet-blue);
+  border: none;
   border-radius: 50%;
 }
 
@@ -147,9 +146,6 @@ a {
 #toTopBtn:focus {
   font-weight: bold;
   outline: none; /* Remove focus border */
-  box-shadow: none; /* Remove focus box shadow */
-  background-color: var(--violet-blue);
-  color: var(--antiflash-white);
 }
 
 .additional-info {
