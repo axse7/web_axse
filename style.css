@@ -181,7 +181,7 @@ a {
   }
   #home {
     background-position: center;
-    background-size: auto;
+    background-size: cover;
   }
 }
 @media (max-width: 992px) {
