@@ -6,6 +6,7 @@
     <!-- Tambahkan Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous" />
     <link rel="icon" href="img/axse3.png" />
     <title>Task | axioo class</title>
     <style>
@@ -17,11 +18,15 @@
         height: 150vh; /* Membuat tinggi setara dengan tinggi viewport */
         text-align: center; /* Menengahkan teks secara horizontal */
       }
+      .table {
+        border-radius: 2px;
+        overflow: hidden;
+      }
     </style>
   </head>
   <body>
     <!-- navbar -->
-    <nav class="navbar navbar-expand-lg shadow" style="background-color: var(--antiflash-white)">
+    <nav class="navbar navbar-expand-lg shadow-sm" style="background-color: var(--antiflash-white)">
       <div class="container">
         <a class="navbar-brand" href="#" style="font-family: 'SpaceHorizon', sans-serif">axse</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -32,6 +37,7 @@
             <li class="nav-item">
               <a class="nav-link" aria-current="page" href="index.html">Home</a>
             </li>
+            <li class="nav-item">
               <a class="nav-link" href="index.html#about">About Us</a>
             </li>
             <li class="nav-item">
@@ -57,21 +63,137 @@
     </nav>
     <!-- navbar end -->
 
-    <div class="container text-center align-items-center">
-      <div class="centered-text">
-        <h1 class="cs font-10vw">coming soon</h1>
+    <!-- search -->
+    <div class="container">
+      <nav class="navbar z-1 mt-4 rounded-2" style="background-color: transparent">
+        <div class="container-fluid justify-content-end">
+          <a id="backButton" class="text-primary me-2">see all</a>
+          <form class="d-flex" id="searchForm">
+            <input class="form-control me-2 fs-6 rounded-5" type="search" placeholder="Search by Name" aria-label="Search" id="searchInput" />
+            <button class="btn btn-outline-primary rounded-5" type="submit">Search</button>
+          </form>
+        </div>
+      </nav>
+    </div>
+    <!-- search end -->
+
+    <!-- content -->
+    <div class="container pt-2 pb-5">
+      <div class="shadow rounded-2">
+        <div id="tableContainer" class="table-responsive poppins-reguler"></div>
       </div>
     </div>
+    <!-- content end -->
 
     <!-- Tambahkan Bootstrap JS dan Popper.js (opsional) -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="script.js"></script>
     <script>
+      // Fungsi untuk membuat tabel dari data JSON
+      function createTable(data) {
+        return (
+          '<table id="taskTable" class="table table-sm table-borderless table-hover rounded-2">' + // Menambahkan id "taskTable" di sini
+          '<thead><tr><th class="ps-3 py-3" style="background-color: var(--antiflash-white); color: var(--oxford-blue)">Task name</th><th style="background-color: var(--antiflash-white); color: var(--oxford-blue); vertical-align: middle;">Description</th><th style="background-color: var(--antiflash-white); color: var(--oxford-blue); vertical-align: middle;">Status</th><th style="background-color: var(--antiflash-white); color: var(--oxford-blue); vertical-align: middle;">Creator</th><th style="background-color: var(--antiflash-white); color: var(--oxford-blue); vertical-align: middle;">Note</th></tr></thead><tbody>' +
+          data
+            .map(function (item) {
+              // Menentukan kelas CSS sesuai dengan status tugas
+              var statusClass = "";
+              switch (item.status) {
+                case "Pending":
+                  statusClass = "text-warning";
+                  break;
+                case "In Progress":
+                  statusClass = "text-primary";
+                  break;
+                case "Complete":
+                  statusClass = "text-success";
+                  break;
+                default:
+                  statusClass = "";
+              }
+
+              return (
+                "<tr>" +
+                '<td class="ps-3 py-4 fw-semibold">' +
+                item.taskName +
+                "</td>" +
+                '<td class="py-4 fs-6" style="width: 20%">' +
+                item.description +
+                "</td>" +
+                '<td class="py-4 ' +
+                statusClass +
+                '" style="width: 10%">' + // Menambahkan kelas CSS untuk status
+                item.status +
+                "</td>" +
+                '<td class="py-4 fw-semibold" style="width: 12%">' +
+                item.creator +
+                "</td>" +
+                '<td class="py-4 fs-6">' +
+                item.note +
+                "</td>" +
+                "</tr>"
+              );
+            })
+            .join("") +
+          "</tbody></table>"
+        );
+      }
+
+      // Memuat data dari file JSON
+      fetch("json/tasks.json")
+        .then((response) => response.json())
+        .then((data) => {
+          // Menambahkan tabel ke dalam elemen dengan id "tableContainer"
+          document.getElementById("tableContainer").innerHTML = createTable(data);
+        })
+        .catch((error) => console.error("Error loading JSON file:", error));
+
+      // Event listener untuk pengajuan formulir pencarian
+      document.getElementById("searchForm").addEventListener("submit", function (event) {
+        event.preventDefault(); // Mencegah perilaku default formulir pengiriman
+
+        var searchTerm = document.getElementById("searchInput").value.toUpperCase();
+        var table = document.getElementById("taskTable");
+        var tr = table.getElementsByTagName("tr");
+
+        // Loop melalui semua baris tabel dan menampilkan/menyembunyikan sesuai dengan kata kunci pencarian
+        for (var i = 0; i < tr.length; i++) {
+          var td = tr[i].getElementsByTagName("td")[3]; // Mengambil kolom keempat (penanggung jawab)
+          if (td) {
+            var txtValue = td.textContent || td.innerText;
+            if (txtValue.toUpperCase().indexOf(searchTerm) > -1) {
+              tr[i].style.display = "";
+            } else {
+              tr[i].style.display = "none";
+            }
+          }
+        }
+
+        // Tampilkan tombol "see all" saat melakukan pencarian
+        document.getElementById("backButton").style.display = "inline";
+      });
+
+      document.addEventListener("DOMContentLoaded", function () {
+        backButton.style.display = "none"; // Sembunyikan tombol "Back" saat halaman dimuat
+      });
+
+      // Event listener untuk tombol "Back"
+      document.getElementById("backButton").addEventListener("click", function () {
+        // Sembunyikan tombol "see all" saat tombol diklik
+        this.style.display = "none";
+
+        // Tampilkan kembali semua baris tabel
+        var table = document.getElementById("taskTable");
+        var tr = table.getElementsByTagName("tr");
+        for (var i = 0; i < tr.length; i++) {
+          tr[i].style.display = "";
+        }
+      });
+
       // Inisialisasi popover
       var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'));
       var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
         return new bootstrap.Popover(popoverTriggerEl);
-      })
+      });
     </script>
   </body>
 </html>
