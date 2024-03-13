@@ -105,8 +105,8 @@ a {
 }
 
 #about {
-  padding: 10rem 0;
-  background-color: var(--cadet-gray);
+  padding: 5rem 0 10rem 0;
+  background-color: var(--vista-blue);
 }
 
 #memori {
@@ -126,7 +126,7 @@ a {
 }
 
 .ls-p {
-  letter-spacing: 3px;
+  letter-spacing: 1px;
 }
 
 .cs {
