@@ -60,10 +60,10 @@
         <div class="row align-items-md-center">
           <div class="col-md-6 d-flex flex-column center-text">
             <h1 class="font-10vw teks-putih">
-              <span class="fw-bold">Welcome</span>
-              <span class="fw-light"> to</span>
+              <span class="fw-bold welcome"></span>
+              <span class="fw-light welcome-to"></span>
             </h1>
-            <p class="mb-6 ps-md-3 teks-putih ls-p">axioo class 2022 | smk krian 1</p>
+            <p class="mb-6 ps-md-3 teks-putih ls-p p-home"></p>
           </div>
         </div>
       </div>
@@ -98,22 +98,22 @@
         </div>
         <div class="row">
           <div class="col-md-4 mx-auto pt-4">
-            <img src="./img/foto/jakarta.jpg" class="rounded mx-auto d-block" alt="" width="100%" />
+            <img src="./img/foto/jakarta.jpg" class="rounded mx-auto d-block memori-img" alt="" width="100%" />
           </div>
           <div class="col-md-4 mx-auto pt-4">
-            <img src="./img/foto/jakarta4.jpg" class="rounded mx-auto d-block" alt="" width="100%" />
+            <img src="./img/foto/jakarta4.jpg" class="rounded mx-auto d-block memori-img" alt="" width="100%" />
           </div>
           <div class="col-md-4 mx-auto pt-4">
-            <img src="./img/foto/jakarta3.jpg" class="rounded mx-auto d-block" alt="" width="100%" />
+            <img src="./img/foto/jakarta3.jpg" class="rounded mx-auto d-block memori-img" alt="" width="100%" />
           </div>
           <div class="col-md-4 mx-auto pt-4">
-            <img src="./img/foto/jakarta2.jpg" class="rounded mx-auto d-block" alt="" width="100%" />
+            <img src="./img/foto/jakarta2.jpg" class="rounded mx-auto d-block memori-img" alt="" width="100%" />
           </div>
           <div class="col-md-4 pt-4">
-            <img src="./img/foto/pahlawan.jpg" class="rounded mx-auto d-block" alt="" width="100%" />
+            <img src="./img/foto/pahlawan.jpg" class="rounded mx-auto d-block memori-img" alt="" width="100%" />
           </div>
           <div class="col-md-4 pt-4">
-            <img src="./img/foto/pahlawan2.jpg" class="rounded mx-auto d-block" alt="" width="100%" />
+            <img src="./img/foto/pahlawan2.jpg" class="rounded mx-auto d-block memori-img" alt="" width="100%" />
           </div>
         </div>
       </div>
@@ -146,11 +146,27 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
+      const memoriImage = document.querySelectorAll('.memori-img');
+
+      memoriImage.forEach((img, i) => {
+        img.dataset.aos = 'fade-down';
+        img.dataset.aosDelay = i * 100;
+        img.dataset.aosDuration = 1000;
+      })
+
       AOS.init({
         once: true,
       });
     </script>
     <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/TextPlugin.min.js"></script>
+    <script>
+      gsap.registerPlugin(TextPlugin);
+      gsap.to(".welcome", { duration: 1, text: "Welcome" });
+      gsap.to(".welcome-to", { duration: 0.5, delay: 1, text: "to" });
+      gsap.to(".p-home", { duration: 1, delay: 2, text: "axioo class 2022 | smk krian 1" });
+    </script>
     <script>
       // Fungsi untuk menampilkan atau menyembunyikan tombol berdasarkan posisi scroll
       window.onscroll = function () {
