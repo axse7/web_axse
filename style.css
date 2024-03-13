@@ -52,8 +52,13 @@ a {
   color: var(--oxford-blue);
 }
 
-.navbar-nav .nav-link {
+.nav-link {
+  color: var(--cadet-gray);
+}
+.nav-link:hover {
   color: var(--oxford-blue);
+  font-weight: bold;
+  margin: 0 1erm;
 }
 .navbar-nav .nav-link.disabled {
   color: var(--alice-blue);
@@ -176,7 +181,7 @@ a {
   }
   #home {
     background-position: center;
-    background-size: auto;
+    background-size: cover;
   }
 }
 @media (max-width: 992px) {
