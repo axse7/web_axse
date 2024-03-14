@@ -48,10 +48,6 @@ a {
   text-decoration: none;
 }
 
-.a-footer:hover {
-  color: var(--oxford-blue);
-}
-
 .nav-link {
   color: var(--cadet-gray);
 }
