@@ -122,7 +122,7 @@ a {
 }
 
 .teks-ungu {
-  color: var(--cadet-gray);
+  color: var(--vista-blue);
 }
 
 .ls-p {
@@ -161,6 +161,23 @@ a {
   display: none;
 }
 
+@media (min-width: 768px) {
+  .blur {
+    backdrop-filter: blur(5px);
+    background-color: rgba(241, 246, 249, 0.8);
+  }
+}
+
+@media (max-width: 567px) {
+  .ls-567 {
+    letter-spacing: 1px;
+  }
+  #home {
+    background-position: center;
+    background-size: cover;
+  }
+}
+
 @media (max-width: 768px) {
   .center-text {
     text-align: center;
@@ -175,15 +192,6 @@ a {
   }
 }
 
-@media (max-width: 567px) {
-  .ls-567 {
-    letter-spacing: 1px;
-  }
-  #home {
-    background-position: center;
-    background-size: cover;
-  }
-}
 @media (max-width: 992px) {
   .ls-992 {
     letter-spacing: 2px;
