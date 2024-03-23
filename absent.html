@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Tambahkan Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css" />
+    <link rel="icon" href="img/axse3.png" />
+    <title>Absent | axioo class</title>
+  </head>
+  <body>
+    <!-- navbar -->
+    <nav class="navbar navbar-expand-lg" style="background-color: var(--antiflash-white)">
+      <div class="container">
+        <a class="navbar-brand" href="#" style="font-family: 'SpaceHorizon', sans-serif">axse</a>
+        <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mb-2 mb-lg-0 ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="index.html#about">About Us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="index.html#memori">Memories</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="index.html#form">Menfes</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"> Menu </a>
+              <ul class="dropdown-menu dropdown-menu-end">
+                <li><a class="dropdown-item" href="members.html">Members</a></li>
+                <li><a class="dropdown-item" href="task.html">Taks</a></li>
+                <li><a class="dropdown-item" href="#">Absent</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- content -->
+    <section id="form" class="py-5">
+      <div class="container rounded-5 blur" data-aos="fade-down" data-aos-duration="1000">
+        <div class="row">
+          <div class="col-md-8 mx-auto text-center pt-5">
+            <h1 class="display-3" style="color: var(--vista-blue)"><span class="display-1 fw-bold">A</span>bsensi <span class="display-1 fw-bold">S</span>iswa</h1>
+          </div>
+        </div>
+        <div class="row">
+          <form class="col-md-8 mx-auto mb-5 pt-5 mx-md-auto" name="submit-to-google-sheet">
+            <div class="alert alert-success alert-dismissible fade show d-none" role="alert">
+              <strong>Terima Kasih!</strong> Anda sudah melakukan absensi.
+              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+            <div class="mb-2">
+              <label for="exampleFormControlInput1" class="form-label warna-gelap">Name</label>
+              <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Insert Name" name="nama" />
+            </div>
+            <div class="mb-2">
+              <label for="exampleFormControlInput1" class="form-label warna-gelap">No. Absen</label>
+              <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Insert Number" name="absen" />
+            </div>
+            <label for="exampleFormControlInput1" class="form-label warna-gelap">Ket</label>
+            <select class="form-select" aria-label="Default select example" name="keterangan">
+              <option selected>Select option</option>
+              <option value="masuk">Masuk</option>
+              <option value="izin">Izin</option>
+              <option value="sakit">Sakit</option>
+              <option value="alpha">Alpha</option>
+            </select>
+            <button type="submit" class="btn btn-primary btn-kirim my-4">Submit</button>
+            <button class="btn btn-primary btn-loading d-none my-4" type="button" disabled>
+              <span class="spinner-border spinner-border-sm" aria-hidden="true"></span>
+              <span role="status">Loading...</span>
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+    <!-- content end -->
+
+    <!-- footer -->
+    <footer class="mb-4" id="footer">
+      <div class="container warna-gelap">
+        <hr />
+        <div class="row">
+          <div class="col-md">
+            <div class="footer-bottom">Copyright <i class="bi bi-c-circle"></i> 2024 XI RPL 1 | Designed by Tim Web XI 1</div>
+          </div>
+          <div class="col-md text-end">
+            <a href="https://www.instagram.com/axse.11?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="><i class="bi bi-instagram p-2 warna-gelap"></i></a>
+            <a href="#footer"><i class="bi bi-twitter-x p-2 warna-gelap"></i></a>
+            <a href="#footer"><i class="bi bi-facebook p-2 warna-gelap"></i></a>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- footer end -->
+
+    <!-- button back to top -->
+    <button id="toTopBtn" class="btn btn-primary" onclick="scrollToTop()"><i class="bi bi-arrow-up text-putih"></i></button>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+    <script>
+      const scriptURL = "https://script.google.com/macros/s/AKfycbxIDVUHpkcQJMhLBAwGTy4EP7EowocVOLAHpjw_ZDf11uc4iT5vzEs2--ev6nFcfmemBQ/exec";
+      const form = document.forms["submit-to-google-sheet"];
+      const btnKirim = document.querySelector(".btn-kirim");
+      const btnLoading = document.querySelector(".btn-loading");
+      const myAlert = document.querySelector(".alert");
+
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        // ketika tombol submit diklik
+        // tampilkan tombol loading hilangkan tombol kirim
+        btnLoading.classList.toggle("d-none");
+        btnKirim.classList.toggle("d-none");
+        fetch(scriptURL, { method: "POST", body: new FormData(form) })
+          .then((response) => {
+            // tampilkan tombol kirim hilangkan tombol loading
+            btnLoading.classList.toggle("d-none");
+            btnKirim.classList.toggle("d-none");
+            // tampilkan alert
+            myAlert.classList.toggle("d-none");
+            // reset form
+            form.reset();
+            console.log("Success!", response);
+          })
+          .catch((error) => console.error("Error!", error.message));
+      });
+    </script>
+  </body>
+</html>
