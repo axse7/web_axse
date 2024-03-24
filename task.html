@@ -7,6 +7,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
     <link rel="icon" href="img/axse3.png" />
     <title>Task | axioo class</title>
     <style>
@@ -50,7 +51,7 @@
               <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"> Menu </a>
               <ul class="dropdown-menu dropdown-menu-end">
                 <li><a class="dropdown-item" href="members.html">Members</a></li>
-                <li><hr class="dropdown-divider"></li>
+                <li><hr class="dropdown-divider" /></li>
                 <li><a class="dropdown-item" href="#">Taks</a></li>
                 <li><a class="dropdown-item" href="absent.html">Absent</a></li>
               </ul>
@@ -83,50 +84,34 @@
     </div>
     <!-- content end -->
 
-    <!-- Tambahkan Bootstrap JS dan Popper.js (opsional) -->
+    <!-- Tambahkan Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
       // Fungsi untuk membuat tabel dari data JSON
       function createTable(data) {
         return (
           '<table id="taskTable" class="table table-sm table-borderless table-hover rounded-2">' + // Menambahkan id "taskTable" di sini
-          '<thead><tr><th class="ps-3 py-3" style="background-color: var(--antiflash-white); color: var(--oxford-blue)">Task name</th><th style="background-color: var(--antiflash-white); color: var(--oxford-blue); vertical-align: middle;">Description</th><th style="background-color: var(--antiflash-white); color: var(--oxford-blue); vertical-align: middle;">Status</th><th style="background-color: var(--antiflash-white); color: var(--oxford-blue); vertical-align: middle;">Creator</th><th style="background-color: var(--antiflash-white); color: var(--oxford-blue); vertical-align: middle;">Note</th></tr></thead><tbody>' +
+          '<thead><tr><th class="ps-3 py-3" style="background-color: var(--antiflash-white); color: var(--oxford-blue)">Task name</th><th style="background-color: var(--antiflash-white); color: var(--oxford-blue); vertical-align: middle;">Description</th><th style="background-color: var(--antiflash-white); color: var(--oxford-blue); vertical-align: middle;">Creator</th><th style="background-color: var(--antiflash-white); color: var(--oxford-blue); vertical-align: middle;">Mata Pelajaran</th><th style="background-color: var(--antiflash-white); color: var(--oxford-blue); vertical-align: middle;">Link</th></tr></thead><tbody>' +
           data
             .map(function (item) {
-              // Menentukan kelas CSS sesuai dengan status tugas
-              var statusClass = "";
-              switch (item.status) {
-                case "Pending":
-                  statusClass = "text-warning";
-                  break;
-                case "In Progress":
-                  statusClass = "text-primary";
-                  break;
-                case "Complete":
-                  statusClass = "text-success";
-                  break;
-                default:
-                  statusClass = "";
-              }
-
               return (
-                "<tr>" +
-                '<td class="ps-3 py-4 fw-semibold">' +
+                "<tr style='border-bottom: 1px solid #9ba3b4ff;'>" +
+                '<td class="ps-3 py-4 fw-semibold" style="width: 20%">' +
                 item.taskName +
                 "</td>" +
-                '<td class="py-4 fs-6" style="width: 20%">' +
+                '<td class="py-4 fs-6" style="width: 30%">' +
                 item.description +
                 "</td>" +
-                '<td class="py-4 ' +
-                statusClass +
-                '" style="width: 10%">' + // Menambahkan kelas CSS untuk status
-                item.status +
-                "</td>" +
-                '<td class="py-4 fw-semibold" style="width: 12%">' +
+                '<td class="py-4 fw-semibold" style="width: 10%">' +
                 item.creator +
                 "</td>" +
                 '<td class="py-4 fs-6">' +
-                item.note +
+                item.mapel +
+                "</td>" +
+                '<td class="py-4 fs-6">' +
+                '<a href="' +
+                item.link +
+                '" target="_blank"><i class="bi bi-box-arrow-up-right warna-gelap fs-5"></i></a>' +
                 "</td>" +
                 "</tr>"
               );
@@ -155,7 +140,7 @@
 
         // Loop melalui semua baris tabel dan menampilkan/menyembunyikan sesuai dengan kata kunci pencarian
         for (var i = 0; i < tr.length; i++) {
-          var td = tr[i].getElementsByTagName("td")[3]; // Mengambil kolom keempat (penanggung jawab)
+          var td = tr[i].getElementsByTagName("td")[2]; // Mengambil kolom keempat (penanggung jawab)
           if (td) {
             var txtValue = td.textContent || td.innerText;
             if (txtValue.toUpperCase().indexOf(searchTerm) > -1) {
