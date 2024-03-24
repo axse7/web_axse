@@ -48,13 +48,16 @@ a {
   text-decoration: none;
 }
 
+.navbar {
+  padding: 0;
+}
 .nav-link {
   color: var(--cadet-gray);
 }
 .nav-link:hover {
+  border-bottom: 2px solid var(--oxford-blue);
   color: var(--oxford-blue);
   font-weight: bold;
-  margin: 0 1erm;
 }
 .navbar-nav .nav-link.disabled {
   color: var(--alice-blue);
